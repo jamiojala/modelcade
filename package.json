@@ -1,6 +1,6 @@
 {
   "name": "@jamiojala/modelcade",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Provider-agnostic TypeScript SDK for unified AI model access with streaming, tools, and fallbacks.",
   "license": "MIT",
   "author": "Jami Ojala",
