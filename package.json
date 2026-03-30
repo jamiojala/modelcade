@@ -1,0 +1,86 @@
+{
+  "name": "@jamiojala/modelcade",
+  "version": "0.1.0",
+  "description": "Provider-agnostic TypeScript SDK for unified AI model access with streaming, tools, and fallbacks.",
+  "license": "MIT",
+  "author": "Jami Ojala",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamiojala/modelcade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jamiojala/modelcade/issues"
+  },
+  "homepage": "https://github.com/jamiojala/modelcade#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./providers/openai": {
+      "types": "./dist/providers/openai.d.ts",
+      "import": "./dist/providers/openai.js",
+      "require": "./dist/providers/openai.cjs"
+    },
+    "./providers/anthropic": {
+      "types": "./dist/providers/anthropic.d.ts",
+      "import": "./dist/providers/anthropic.js",
+      "require": "./dist/providers/anthropic.cjs"
+    },
+    "./providers/google": {
+      "types": "./dist/providers/google.d.ts",
+      "import": "./dist/providers/google.js",
+      "require": "./dist/providers/google.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist coverage",
+    "dev": "vitest --watch",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "changeset publish",
+    "prepublishOnly": "pnpm build && pnpm test && pnpm typecheck"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "sdk",
+    "openai",
+    "anthropic",
+    "gemini",
+    "streaming",
+    "tool-calling",
+    "fallbacks",
+    "typescript"
+  ],
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "@types/node": "^22.14.1",
+    "@vitest/coverage-v8": "^3.2.4",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}
